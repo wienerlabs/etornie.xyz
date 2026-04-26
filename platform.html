@@ -1,0 +1,167 @@
+<html lang="en" class="antialiased"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platform — Etornie</title>
+<meta name="description" content="One workspace for IP cases, AI agents, deadline tracking, on-chain attestations, and global filings.">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #08090a; color: #ffffff; }
+.font-geist { font-family: 'Geist', sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+</head>
+<body class="selection:bg-white/20 selection:text-white">
+
+<nav class="fixed z-50 flex w-full border-[#2e2e32] border-b pt-4 pr-6 pb-4 pl-6 top-0 items-center justify-between" style="background: rgba(15, 17, 21, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px)">
+    <a href="/" class="flex items-center gap-2">
+        <img src="/logo.svg" alt="Etornie" width="22" height="22" class="rounded-[5px]">
+        <span class="font-normal text-base tracking-tight font-geist">Etornie</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm text-[#b0b3b8]">
+        <a href="/platform.html" class="text-white transition-colors font-geist">Platform</a>
+        <a href="/solana.html" class="hover:text-white transition-colors font-geist">Solana</a>
+        <a href="/attorney.html" class="hover:text-white transition-colors font-geist">For Attorneys</a>
+        <a href="/pricing.html" class="hover:text-white transition-colors font-geist">Pricing</a>
+        <a href="#agents" class="hover:text-white transition-colors flex items-center gap-1 font-geist">AI Agents <span class="bg-[#2e2e32] text-xs px-1.5 rounded-sm text-white font-geist">New</span></a>
+        <a href="#" class="hover:text-white transition-colors font-geist">Docs</a>
+    </div>
+    <div class="flex items-center gap-6">
+        <a href="https://app.etornie.com/login" class="text-sm font-normal hover:text-white text-[#b0b3b8] transition-colors font-geist">Log in</a>
+        <a href="/pricing.html" class="bg-white text-black text-sm font-normal px-4 py-2 rounded-full hover:bg-gray-200 transition-colors font-geist">Sign up</a>
+    </div>
+</nav>
+
+<section class="flex flex-col max-w-[1200px] mx-auto pt-40 pb-16 px-6 items-center text-center">
+    <h1 class="text-5xl md:text-7xl tracking-tight leading-[1.05] max-w-4xl font-geist font-light">One workspace<br>for every IP matter</h1>
+    <p class="text-lg md:text-xl text-[#b0b3b8] mt-6 max-w-2xl font-geist font-light">Cases, documents, deadlines, AI agents, and on-chain attestations &mdash; all in one place. From solo counsel to enterprise IP firms with global portfolios.</p>
+</section>
+
+<section class="max-w-[1200px] mx-auto px-6 py-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <a href="#cases" class="rounded-xl border border-[#2e2e32] bg-gradient-to-br from-white/[0.04] to-transparent p-6 hover:border-blue-500/30 transition-colors group">
+        <iconify-icon icon="solar:scale-linear" width="28" class="text-blue-400"></iconify-icon>
+        <h3 class="text-white font-medium mt-4 font-geist">Cases</h3>
+        <p class="text-sm text-[#b0b3b8] mt-2 font-geist">Trademark, patent, design, copyright. Auto-numbered, status-tracked, role-filtered.</p>
+    </a>
+    <a href="#documents" class="rounded-xl border border-[#2e2e32] bg-gradient-to-br from-white/[0.04] to-transparent p-6 hover:border-blue-500/30 transition-colors group">
+        <iconify-icon icon="solar:document-text-linear" width="28" class="text-blue-400"></iconify-icon>
+        <h3 class="text-white font-medium mt-4 font-geist">Documents</h3>
+        <p class="text-sm text-[#b0b3b8] mt-2 font-geist">Upload, version, share. Indexed for RAG &mdash; EtornieGPT can read every word.</p>
+    </a>
+    <a href="#agents" class="rounded-xl border border-[#2e2e32] bg-gradient-to-br from-white/[0.04] to-transparent p-6 hover:border-blue-500/30 transition-colors group">
+        <iconify-icon icon="solar:robot-linear" width="28" class="text-blue-400"></iconify-icon>
+        <h3 class="text-white font-medium mt-4 font-geist">AI Agents</h3>
+        <p class="text-sm text-[#b0b3b8] mt-2 font-geist">EtornieGPT for drafting + IP Agent for autonomous deadline scanning.</p>
+    </a>
+    <a href="#deadlines" class="rounded-xl border border-[#2e2e32] bg-gradient-to-br from-white/[0.04] to-transparent p-6 hover:border-blue-500/30 transition-colors group">
+        <iconify-icon icon="solar:calendar-mark-linear" width="28" class="text-blue-400"></iconify-icon>
+        <h3 class="text-white font-medium mt-4 font-geist">Deadlines</h3>
+        <p class="text-sm text-[#b0b3b8] mt-2 font-geist">30 / 7 / 1-day reminders via WhatsApp + email. Same-day minute reminders too.</p>
+    </a>
+    <a href="#solana" class="rounded-xl border border-[#2e2e32] bg-gradient-to-br from-white/[0.04] to-transparent p-6 hover:border-blue-500/30 transition-colors group">
+        <iconify-icon icon="simple-icons:solana" width="24" class="text-purple-400"></iconify-icon>
+        <h3 class="text-white font-medium mt-4 font-geist">Solana</h3>
+        <p class="text-sm text-[#b0b3b8] mt-2 font-geist">Wallet sign-in, ZK attestations, RWA tokenization &mdash; <a href="/solana.html" class="text-blue-400 hover:underline">read more</a>.</p>
+    </a>
+    <a href="#api" class="rounded-xl border border-[#2e2e32] bg-gradient-to-br from-white/[0.04] to-transparent p-6 hover:border-blue-500/30 transition-colors group">
+        <iconify-icon icon="solar:code-square-linear" width="28" class="text-blue-400"></iconify-icon>
+        <h3 class="text-white font-medium mt-4 font-geist">API &amp; Webhooks</h3>
+        <p class="text-sm text-[#b0b3b8] mt-2 font-geist">FastAPI + REST. Webhooks fire on case events. TypeScript SDK on the way.</p>
+    </a>
+</section>
+
+<section id="cases" class="max-w-[1200px] mx-auto px-6 py-24">
+    <div class="grid md:grid-cols-2 gap-12 mb-12 items-start">
+        <h2 class="text-4xl md:text-5xl tracking-tight font-geist font-light">Cases that auto-number themselves</h2>
+        <p class="text-lg text-[#b0b3b8] font-geist">Every case gets a unique reference (<code class="font-mono text-blue-400 text-base">ETR-YYYY-NNNN</code>) and moves through a typed status workflow. Guest-client support means you can log a matter for an unregistered client and auto-link it when they sign up.</p>
+    </div>
+    <ul class="grid md:grid-cols-4 gap-3 text-sm text-[#b0b3b8] font-geist">
+        <li class="rounded-lg border border-[#2e2e32] p-4"><span class="text-white font-medium">Trademark</span><br><span class="text-xs text-[#7e828a] mt-1 inline-block">Madrid, USPTO, EUIPO, TÜRKPATENT</span></li>
+        <li class="rounded-lg border border-[#2e2e32] p-4"><span class="text-white font-medium">Patent</span><br><span class="text-xs text-[#7e828a] mt-1 inline-block">PCT, EP, US, JP, CN</span></li>
+        <li class="rounded-lg border border-[#2e2e32] p-4"><span class="text-white font-medium">Design</span><br><span class="text-xs text-[#7e828a] mt-1 inline-block">Hague, EUIPO, locarno classes</span></li>
+        <li class="rounded-lg border border-[#2e2e32] p-4"><span class="text-white font-medium">Copyright</span><br><span class="text-xs text-[#7e828a] mt-1 inline-block">National + Berne members</span></li>
+    </ul>
+</section>
+
+<section id="agents" class="max-w-[1200px] mx-auto px-6 py-24 border-t border-[#2e2e32]">
+    <div class="grid md:grid-cols-2 gap-12 mb-12 items-start">
+        <h2 class="text-4xl md:text-5xl tracking-tight font-geist font-light">AI agents that<br>actually act</h2>
+        <p class="text-lg text-[#b0b3b8] font-geist">Two agents, one workspace. EtornieGPT answers questions and drafts documents. The IP Agent runs autonomous scans, schedules notifications, and routes the right counsel before any deadline closes.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-[#2e2e32] bg-gradient-to-br from-blue-500/[0.04] to-transparent p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <iconify-icon icon="solar:chat-round-bold" width="24" class="text-blue-400"></iconify-icon>
+                <h3 class="text-xl text-white font-geist">EtornieGPT</h3>
+            </div>
+            <p class="text-sm text-[#b0b3b8] font-geist mb-6">Llama 3.3 70B Versatile via Groq, with an IP-law system prompt and RAG over your indexed dossier (Together AI embeddings + pgvector).</p>
+            <ul class="space-y-2 text-sm text-[#b0b3b8] font-geist">
+                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="14" class="text-blue-500 mt-1"></iconify-icon> Simple chat + RAG-augmented chat</li>
+                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="14" class="text-blue-500 mt-1"></iconify-icon> RBAC-filtered search results</li>
+                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="14" class="text-blue-500 mt-1"></iconify-icon> Drafts office actions, briefs, replies</li>
+            </ul>
+        </div>
+        <div class="rounded-xl border border-[#2e2e32] bg-gradient-to-br from-purple-500/[0.04] to-transparent p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <iconify-icon icon="solar:robot-bold" width="24" class="text-purple-400"></iconify-icon>
+                <h3 class="text-xl text-white font-geist">IP Agent</h3>
+            </div>
+            <p class="text-sm text-[#b0b3b8] font-geist mb-6">An autonomous scanner that watches every active case for upcoming deadlines and routes notifications to the right counsel and client.</p>
+            <ul class="space-y-2 text-sm text-[#b0b3b8] font-geist">
+                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="14" class="text-purple-500 mt-1"></iconify-icon> 30 / 7 / 1-day reminders</li>
+                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="14" class="text-purple-500 mt-1"></iconify-icon> Same-day minute reminders</li>
+                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="14" class="text-purple-500 mt-1"></iconify-icon> Auto-creates WhatsApp + email notifications</li>
+                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="14" class="text-purple-500 mt-1"></iconify-icon> Configurable intervals + duplicate prevention</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="max-w-[800px] mx-auto px-6 py-24 text-center">
+    <h2 class="text-4xl md:text-5xl tracking-tight font-geist font-light">Try every feature<br>for 15 days, free.</h2>
+    <div class="flex flex-col sm:flex-row items-center gap-4 mt-10 justify-center">
+        <a href="https://app.etornie.com/login" class="bg-white text-black px-6 py-3 rounded-full font-normal text-sm hover:bg-gray-200 transition-colors font-geist">Get started</a>
+        <a href="/pricing.html" class="bg-transparent border border-[#2e2e32] px-6 py-3 rounded-full font-normal text-sm hover:bg-white/5 transition-colors font-geist">See pricing</a>
+    </div>
+</section>
+
+<footer class="max-w-[1200px] mx-auto pt-20 pb-12 px-6 relative mt-12 border-t border-[#2e2e32]">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-16 pt-12">
+        <div class="col-span-2 lg:col-span-1 flex flex-col items-start">
+            <div class="flex items-center gap-3 mb-5">
+                <img src="/logo.svg" alt="Etornie" width="32" height="32" class="rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+                <span class="text-white font-medium text-lg tracking-tight font-geist">Etornie</span>
+            </div>
+            <p class="text-sm text-[#7e828a] max-w-[260px] leading-relaxed font-geist">The intellectual property OS for the on-chain era. Built by Wiener Labs.</p>
+        </div>
+        <div class="flex flex-col gap-4">
+            <h4 class="text-white font-medium text-sm mb-1 font-geist">Platform</h4>
+            <a href="/platform.html" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">Overview</a>
+            <a href="/solana.html" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">Solana</a>
+            <a href="/attorney.html" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">For Attorneys</a>
+            <a href="/pricing.html" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">Pricing</a>
+        </div>
+        <div class="flex flex-col gap-4">
+            <h4 class="text-white font-medium text-sm mb-1 font-geist">Company</h4>
+            <a href="mailto:info@etornie.com" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">Contact</a>
+            <a href="https://www.linkedin.com/company/etornieag/" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">LinkedIn</a>
+            <a href="https://x.com/etornieag" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">X (Twitter)</a>
+            <a href="https://github.com/wienerlabs/etornie.xyz" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">GitHub</a>
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8 border-t border-[#2e2e32]/50">
+        <div class="flex flex-col gap-1">
+            <p class="text-xs text-[#7e828a] font-geist">© 2026 Etornie AG · Ruessenstrasse 5, 6340 Baar, Switzerland</p>
+            <p class="text-xs text-[#7e828a] font-geist">Built by <a href="https://wienerlabs.com" class="hover:text-white transition-colors">Wiener Labs</a> on Solana &middot; <a href="mailto:info@etornie.com" class="hover:text-white transition-colors">info@etornie.com</a></p>
+        </div>
+        <div class="flex items-center gap-4 text-xs text-[#7e828a]">
+            <a href="/privacy.html" class="hover:text-white transition-colors font-geist">Privacy</a>
+            <a href="/terms.html" class="hover:text-white transition-colors font-geist">Terms</a>
+            <a href="/dpa.html" class="hover:text-white transition-colors font-geist">DPA</a>
+        </div>
+    </div>
+</footer>
+</body></html>
