@@ -1,0 +1,256 @@
+<html lang="en" class="antialiased"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docs — Etornie</title>
+<meta name="description" content="Quickstart, REST API reference, AI features, and Solana attestation guides for the Etornie platform.">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #08090a; color: #ffffff; }
+.font-geist { font-family: 'Geist', sans-serif !important; }
+pre { background: #050505; border: 1px solid #2e2e32; border-radius: 12px; padding: 1rem 1.25rem; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; line-height: 1.65; color: #e5e7eb; overflow-x: auto; }
+pre .k { color: #c678dd; }
+pre .s { color: #98c379; }
+pre .n { color: #d19a66; }
+pre .c { color: #5c6370; }
+pre .f { color: #61afef; }
+code.inline { background: #15171b; border: 1px solid #2e2e32; padding: 1px 6px; border-radius: 4px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 0.875em; }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&amp;display=swap">
+</head>
+<body class="selection:bg-white/20 selection:text-white">
+
+<nav class="fixed z-50 flex w-full border-[#2e2e32] border-b pt-4 pr-6 pb-4 pl-6 top-0 items-center justify-between" style="background: rgba(15, 17, 21, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px)">
+    <a href="/" class="flex items-center gap-2">
+        <img src="/logo.svg" alt="Etornie" width="22" height="22" class="rounded-[5px]">
+        <span class="font-normal text-base tracking-tight font-geist">Etornie</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm text-[#b0b3b8]">
+        <a href="/platform.html" class="hover:text-white transition-colors font-geist">Platform</a>
+        <a href="/solana.html" class="hover:text-white transition-colors font-geist">Solana</a>
+        <a href="/attorney.html" class="hover:text-white transition-colors font-geist">For Attorneys</a>
+        <a href="/pricing.html" class="hover:text-white transition-colors font-geist">Pricing</a>
+        <a href="/docs.html" class="text-white transition-colors font-geist">Docs</a>
+    </div>
+    <div class="flex items-center gap-6">
+        <a href="https://app.etornie.com/login" class="text-sm font-normal hover:text-white text-[#b0b3b8] transition-colors font-geist">Log in</a>
+        <a href="/pricing.html" class="bg-white text-black text-sm font-normal px-4 py-2 rounded-full hover:bg-gray-200 transition-colors font-geist">Sign up</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="flex flex-col max-w-[1200px] mx-auto pt-40 pb-12 px-6 items-center text-center">
+    <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-wider font-bold text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full font-geist mb-6">
+        <iconify-icon icon="solar:code-square-linear" width="12"></iconify-icon> Developer Docs
+    </span>
+    <h1 class="text-5xl md:text-7xl tracking-tight leading-[1.05] max-w-3xl font-geist font-light">Build on Etornie</h1>
+    <p class="text-lg md:text-xl text-[#b0b3b8] mt-6 max-w-2xl font-geist font-light">REST API reference, AI features, and Solana attestation guides. Everything you need to embed IP workflows into your stack.</p>
+    <div class="mt-8 inline-flex items-center gap-2 text-xs text-[#7e828a] bg-white/[0.02] border border-white/[0.05] px-3 py-1.5 rounded-full font-geist">
+        <iconify-icon icon="solar:info-circle-linear" width="12"></iconify-icon>
+        Public SDK ships with v0.2 &mdash; the API below is stable.
+    </div>
+</section>
+
+<!-- Quick links -->
+<section class="max-w-[1200px] mx-auto px-6 py-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <a href="#quickstart" class="rounded-xl border border-[#2e2e32] bg-white/[0.02] hover:border-blue-500/30 transition-colors p-5">
+        <iconify-icon icon="solar:rocket-linear" width="22" class="text-blue-400"></iconify-icon>
+        <div class="text-white font-medium mt-3 font-geist">Quickstart</div>
+        <div class="text-xs text-[#7e828a] mt-1 font-geist">Up and running in 5 minutes</div>
+    </a>
+    <a href="#auth" class="rounded-xl border border-[#2e2e32] bg-white/[0.02] hover:border-blue-500/30 transition-colors p-5">
+        <iconify-icon icon="solar:key-square-linear" width="22" class="text-blue-400"></iconify-icon>
+        <div class="text-white font-medium mt-3 font-geist">Authentication</div>
+        <div class="text-xs text-[#7e828a] mt-1 font-geist">JWT + wallet sign-in</div>
+    </a>
+    <a href="#cases" class="rounded-xl border border-[#2e2e32] bg-white/[0.02] hover:border-blue-500/30 transition-colors p-5">
+        <iconify-icon icon="solar:scale-linear" width="22" class="text-blue-400"></iconify-icon>
+        <div class="text-white font-medium mt-3 font-geist">Cases API</div>
+        <div class="text-xs text-[#7e828a] mt-1 font-geist">CRUD + status workflow</div>
+    </a>
+    <a href="#ai" class="rounded-xl border border-[#2e2e32] bg-white/[0.02] hover:border-blue-500/30 transition-colors p-5">
+        <iconify-icon icon="solar:chat-round-linear" width="22" class="text-blue-400"></iconify-icon>
+        <div class="text-white font-medium mt-3 font-geist">AI &amp; RAG</div>
+        <div class="text-xs text-[#7e828a] mt-1 font-geist">EtornieGPT + indexing</div>
+    </a>
+    <a href="#agent" class="rounded-xl border border-[#2e2e32] bg-white/[0.02] hover:border-blue-500/30 transition-colors p-5">
+        <iconify-icon icon="solar:robot-linear" width="22" class="text-blue-400"></iconify-icon>
+        <div class="text-white font-medium mt-3 font-geist">IP Agent</div>
+        <div class="text-xs text-[#7e828a] mt-1 font-geist">Deadline scanning</div>
+    </a>
+    <a href="#webhooks" class="rounded-xl border border-[#2e2e32] bg-white/[0.02] hover:border-blue-500/30 transition-colors p-5">
+        <iconify-icon icon="solar:bell-linear" width="22" class="text-blue-400"></iconify-icon>
+        <div class="text-white font-medium mt-3 font-geist">Webhooks</div>
+        <div class="text-xs text-[#7e828a] mt-1 font-geist">Case event subscriptions</div>
+    </a>
+    <a href="#wallet" class="rounded-xl border border-[#2e2e32] bg-white/[0.02] hover:border-blue-500/30 transition-colors p-5">
+        <iconify-icon icon="solar:wallet-linear" width="22" class="text-purple-400"></iconify-icon>
+        <div class="text-white font-medium mt-3 font-geist">Wallet sign-in</div>
+        <div class="text-xs text-[#7e828a] mt-1 font-geist">ed25519 nonce flow</div>
+    </a>
+    <a href="#errors" class="rounded-xl border border-[#2e2e32] bg-white/[0.02] hover:border-blue-500/30 transition-colors p-5">
+        <iconify-icon icon="solar:danger-triangle-linear" width="22" class="text-blue-400"></iconify-icon>
+        <div class="text-white font-medium mt-3 font-geist">Errors</div>
+        <div class="text-xs text-[#7e828a] mt-1 font-geist">Status codes &amp; retries</div>
+    </a>
+</section>
+
+<!-- Quickstart -->
+<section id="quickstart" class="max-w-[900px] mx-auto px-6 py-16 border-t border-[#2e2e32]">
+    <h2 class="text-3xl md:text-4xl tracking-tight font-geist font-light mb-3">Quickstart</h2>
+    <p class="text-[#b0b3b8] font-geist mb-6">Login, list cases, and create one in three calls. Replace <code class="inline">$TOKEN</code> with the JWT you receive from <code class="inline">/auth/login</code>.</p>
+<pre><span class="c"># 1. Login</span>
+curl -X POST https://api.etornie.com/auth/login \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -d <span class="s">'{"email":"you@firm.com","password":"..."}'</span>
+
+<span class="c"># 2. List cases (RBAC-filtered)</span>
+curl https://api.etornie.com/cases \
+  -H <span class="s">"Authorization: Bearer $TOKEN"</span>
+
+<span class="c"># 3. Create a trademark case</span>
+curl -X POST https://api.etornie.com/cases \
+  -H <span class="s">"Authorization: Bearer $TOKEN"</span> \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -d <span class="s">'{"type":"trademark","client_id":"clt_9x12","jurisdiction":"us_uspto","deadline_days":42}'</span></pre>
+</section>
+
+<!-- Auth -->
+<section id="auth" class="max-w-[900px] mx-auto px-6 py-16 border-t border-[#2e2e32]">
+    <h2 class="text-3xl md:text-4xl tracking-tight font-geist font-light mb-3">Authentication</h2>
+    <p class="text-[#b0b3b8] font-geist mb-6">Etornie supports two authentication methods: email + password (JWT) and Solana wallet sign-in (ed25519 nonce). Both issue the same access &amp; refresh tokens.</p>
+
+    <h3 class="text-lg font-medium text-white font-geist mt-8 mb-3">JWT &mdash; email + password</h3>
+<pre><span class="f">POST</span> /auth/register/request    <span class="c">// sends 6-digit OTP</span>
+<span class="f">POST</span> /auth/register/verify     <span class="c">// confirms OTP &amp; creates account</span>
+<span class="f">POST</span> /auth/login                <span class="c">// returns access + refresh JWT</span>
+<span class="f">POST</span> /auth/refresh              <span class="c">// rotates access token</span>
+<span class="f">GET</span>  /auth/me                   <span class="c">// current user profile</span></pre>
+    <p class="text-sm text-[#7e828a] font-geist mt-3">Access token TTL: 30 minutes. Refresh token TTL: 7 days. Configure via <code class="inline">ACCESS_TOKEN_EXPIRE_MINUTES</code> and <code class="inline">REFRESH_TOKEN_EXPIRE_DAYS</code>.</p>
+
+    <h3 class="text-lg font-medium text-white font-geist mt-8 mb-3" id="wallet">Wallet sign-in (Phantom &amp; Solflare)</h3>
+<pre><span class="c">// 1. Request a nonce</span>
+<span class="f">POST</span> /auth/wallet/nonce
+  { <span class="s">"public_key"</span>: <span class="s">"5xyz..."</span> }
+
+<span class="c">// 2. Sign with ed25519 in the wallet, then verify</span>
+<span class="f">POST</span> /auth/wallet/verify
+  { <span class="s">"public_key"</span>: <span class="s">"5xyz..."</span>,
+    <span class="s">"signature"</span>:  <span class="s">"base58..."</span>,
+    <span class="s">"role"</span>:       <span class="s">"client"</span> }    <span class="c">// or "lawyer"</span></pre>
+    <p class="text-sm text-[#7e828a] font-geist mt-3">Nonces are single-use, Redis-backed, and expire after 5 minutes. The <code class="inline">admin</code> role <em>cannot</em> be self-assigned via wallet sign-up.</p>
+</section>
+
+<!-- Cases -->
+<section id="cases" class="max-w-[900px] mx-auto px-6 py-16 border-t border-[#2e2e32]">
+    <h2 class="text-3xl md:text-4xl tracking-tight font-geist font-light mb-3">Cases API</h2>
+    <p class="text-[#b0b3b8] font-geist mb-6">Cases auto-number themselves (<code class="inline">ETR-YYYY-NNNN</code>) and move through a typed status workflow: <code class="inline">open</code> &rarr; <code class="inline">in_progress</code> &rarr; <code class="inline">under_review</code> &rarr; <code class="inline">closed</code>.</p>
+<pre><span class="f">POST</span>   /cases                     <span class="c">// admin, lawyer</span>
+<span class="f">GET</span>    /cases                     <span class="c">// RBAC-filtered list</span>
+<span class="f">GET</span>    /cases/{id}                <span class="c">// participants only</span>
+<span class="f">PATCH</span>  /cases/{id}                <span class="c">// admin, assigned lawyer</span>
+<span class="f">POST</span>   /cases/{id}/notes          <span class="c">// add a note</span>
+<span class="f">GET</span>    /cases/{id}/notes          <span class="c">// list notes</span>
+<span class="f">POST</span>   /cases/{id}/documents      <span class="c">// upload</span>
+<span class="f">GET</span>    /documents/{id}/download   <span class="c">// download</span></pre>
+    <p class="text-sm text-[#7e828a] font-geist mt-3">Guest-client support: pass <code class="inline">guest_client_email</code> instead of <code class="inline">client_id</code>. The case is auto-linked when the guest registers.</p>
+</section>
+
+<!-- AI -->
+<section id="ai" class="max-w-[900px] mx-auto px-6 py-16 border-t border-[#2e2e32]">
+    <h2 class="text-3xl md:text-4xl tracking-tight font-geist font-light mb-3">AI &amp; RAG</h2>
+    <p class="text-[#b0b3b8] font-geist mb-6">EtornieGPT (Llama 3.3 70B Versatile via Groq) with optional RAG over your indexed dossier. Embeddings via Together AI, stored in <code class="inline">pgvector</code>.</p>
+<pre><span class="f">POST</span>  /ai/index/{document_id}    <span class="c">// admin, lawyer</span>
+<span class="f">POST</span>  /ai/search                 <span class="c">// similarity (RBAC-filtered)</span>
+<span class="f">POST</span>  /ai/chat                   <span class="c">// simple or RAG-augmented</span></pre>
+    <p class="text-sm text-[#7e828a] font-geist mt-3">Search results are filtered by RBAC <em>before</em> being passed to the model &mdash; users never see content they aren&rsquo;t authorised to read.</p>
+</section>
+
+<!-- Agent -->
+<section id="agent" class="max-w-[900px] mx-auto px-6 py-16 border-t border-[#2e2e32]">
+    <h2 class="text-3xl md:text-4xl tracking-tight font-geist font-light mb-3">IP Agent</h2>
+    <p class="text-[#b0b3b8] font-geist mb-6">An autonomous deadline scanner. Default reminder intervals are 30 / 7 / 1 days; minute-based reminders fire on the day of the deadline.</p>
+<pre><span class="f">POST</span> /agents/ip/scan-deadlines      <span class="c">// admin</span>
+<span class="f">GET</span>  /agents/ip/upcoming-deadlines  <span class="c">// admin, lawyer</span>
+<span class="f">POST</span> /agents/ip/configure           <span class="c">// admin</span></pre>
+    <p class="text-sm text-[#7e828a] font-geist mt-3">Reminders are routed via WhatsApp Business Cloud API and EmailJS. Duplicates are prevented automatically.</p>
+</section>
+
+<!-- Webhooks -->
+<section id="webhooks" class="max-w-[900px] mx-auto px-6 py-16 border-t border-[#2e2e32]">
+    <h2 class="text-3xl md:text-4xl tracking-tight font-geist font-light mb-3">Webhooks</h2>
+    <p class="text-[#b0b3b8] font-geist mb-6">Subscribe to case-level events from your own backend. Payloads are HMAC-signed.</p>
+<pre>case.created
+case.updated
+case.deadline      <span class="c">// fires on every reminder</span>
+case.note.created
+document.uploaded
+agent.notification.sent
+attestation.minted <span class="c">// Solana on-chain confirmation</span></pre>
+</section>
+
+<!-- Errors -->
+<section id="errors" class="max-w-[900px] mx-auto px-6 py-16 border-t border-[#2e2e32]">
+    <h2 class="text-3xl md:text-4xl tracking-tight font-geist font-light mb-3">Errors &amp; retries</h2>
+    <ul class="text-sm text-[#b0b3b8] font-geist space-y-2">
+        <li><code class="inline">400</code> &mdash; validation error (FastAPI Pydantic detail in body)</li>
+        <li><code class="inline">401</code> &mdash; missing or invalid JWT</li>
+        <li><code class="inline">403</code> &mdash; RBAC denial</li>
+        <li><code class="inline">404</code> &mdash; not found <em>or</em> not visible to your role</li>
+        <li><code class="inline">409</code> &mdash; conflict (e.g. duplicate guest email)</li>
+        <li><code class="inline">429</code> &mdash; rate limited; retry with exponential backoff</li>
+        <li><code class="inline">5xx</code> &mdash; server error; safe to retry idempotent calls</li>
+    </ul>
+</section>
+
+<!-- CTA -->
+<section class="max-w-[800px] mx-auto px-6 py-24 text-center">
+    <h2 class="text-4xl md:text-5xl tracking-tight font-geist font-light">Need something we don't document yet?</h2>
+    <p class="text-lg text-[#b0b3b8] mt-4 font-geist">Email <a href="mailto:info@etornie.com" class="text-blue-400 hover:underline">info@etornie.com</a> &mdash; we triage developer questions same-day during the beta.</p>
+    <div class="flex flex-col sm:flex-row items-center gap-4 mt-10 justify-center">
+        <a href="https://github.com/wienerlabs/etornie.xyz" class="bg-white text-black px-6 py-3 rounded-full font-normal text-sm hover:bg-gray-200 transition-colors font-geist">View on GitHub</a>
+        <a href="/pricing.html" class="bg-transparent border border-[#2e2e32] px-6 py-3 rounded-full font-normal text-sm hover:bg-white/5 transition-colors font-geist">See pricing</a>
+    </div>
+</section>
+
+<footer class="max-w-[1200px] mx-auto pt-20 pb-12 px-6 relative mt-12 border-t border-[#2e2e32]">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-16 pt-12">
+        <div class="col-span-2 lg:col-span-1 flex flex-col items-start">
+            <div class="flex items-center gap-3 mb-5">
+                <img src="/logo.svg" alt="Etornie" width="32" height="32" class="rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+                <span class="text-white font-medium text-lg tracking-tight font-geist">Etornie</span>
+            </div>
+            <p class="text-sm text-[#7e828a] max-w-[260px] leading-relaxed font-geist">The intellectual property OS for the on-chain era. Built by Wiener Labs.</p>
+        </div>
+        <div class="flex flex-col gap-4">
+            <h4 class="text-white font-medium text-sm mb-1 font-geist">Platform</h4>
+            <a href="/platform.html" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">Overview</a>
+            <a href="/solana.html" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">Solana</a>
+            <a href="/attorney.html" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">For Attorneys</a>
+            <a href="/pricing.html" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">Pricing</a>
+        </div>
+        <div class="flex flex-col gap-4">
+            <h4 class="text-white font-medium text-sm mb-1 font-geist">Company</h4>
+            <a href="mailto:info@etornie.com" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">Contact</a>
+            <a href="https://www.linkedin.com/company/etornieag/" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">LinkedIn</a>
+            <a href="https://x.com/etornieag" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">X (Twitter)</a>
+            <a href="https://github.com/wienerlabs/etornie.xyz" class="text-sm text-[#7e828a] hover:text-white transition-colors duration-200 font-geist">GitHub</a>
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8 border-t border-[#2e2e32]/50">
+        <div class="flex flex-col gap-1">
+            <p class="text-xs text-[#7e828a] font-geist">© 2026 Etornie AG · Ruessenstrasse 5, 6340 Baar, Switzerland</p>
+            <p class="text-xs text-[#7e828a] font-geist">Built by <a href="https://wienerlabs.com" class="hover:text-white transition-colors">Wiener Labs</a> on Solana &middot; <a href="mailto:info@etornie.com" class="hover:text-white transition-colors">info@etornie.com</a></p>
+        </div>
+        <div class="flex items-center gap-4 text-xs text-[#7e828a]">
+            <a href="/privacy.html" class="hover:text-white transition-colors font-geist">Privacy</a>
+            <a href="/terms.html" class="hover:text-white transition-colors font-geist">Terms</a>
+            <a href="/dpa.html" class="hover:text-white transition-colors font-geist">DPA</a>
+        </div>
+    </div>
+</footer>
+</body></html>
