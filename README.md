@@ -8,7 +8,7 @@ Marketing site for **Etornie** — the intellectual property OS for the on-chain
 
 | Path             | Purpose |
 |------------------|---------|
-| `/`              | Landing — hero mockup (Destek Patent client case), 5 feature sections, pricing, use-case testimonials |
+| `/`              | Landing — hero mockup (Apple Inc placeholder client case), 5 feature sections, pricing, use-case testimonials |
 | `/platform.html` | Platform overview — Cases, Documents, AI Agents, Deadlines, Solana, API |
 | `/solana.html`   | Solana layer — wallet sign-in, ZK attestations, RWA tokenization, x402+zk pay-per-query, roadmap |
 | `/attorney.html` | For attorneys — 195 jurisdictions, deadline tracking, EtornieGPT, multilingual UI |
@@ -49,7 +49,7 @@ No build step. Edit the HTML, refresh the browser.
 ## Assets
 
 - `logo.svg` — Etornie brand mark (blue field, white vertical bar + asterisk rays)
-- `destek-patent-white.png` — Destek Patent's transparent logo, sourced from [destekpatent.com](https://destekpatent.com) for the client-card mockup. Replace or remove before public launch unless usage is cleared with Destek Patent.
+- The hero mockup names "Apple Inc" as a template/illustrative client; no relationship is implied. No third-party logo files are bundled.
 
 ## Roadmap
 
